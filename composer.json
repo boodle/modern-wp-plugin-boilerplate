@@ -1,5 +1,8 @@
 {
     "require": {
         
+    },
+    "require-dev": {
+        "phpro/grumphp-shim": "^0.18.0"
     }
 }
