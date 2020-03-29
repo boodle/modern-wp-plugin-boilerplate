@@ -12,7 +12,7 @@ namespace KnkGenerator;
  *
  * @link              https://totalonion.com
  * @since             1.0.0
- * @package           Knk_Generator
+ * @package           KnkGenerator
  *
  * @wordpress-plugin
  * Plugin Name:       KNK generator
@@ -28,8 +28,8 @@ namespace KnkGenerator;
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (! defined('WPINC')) {
+    die;
 }
 
 /**
@@ -37,35 +37,32 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'KNK_GENERATOR_VERSION', '1.0.0' );
-require_once __DIR__ . '/autoloader.php';
+define('KNK_GENERATOR_VERSION', '1.0.0');
+define('KNK_GENERATOR_NAME', 'knk-generator');
+define('KNK_GENERATOR_NAMESPACE', 'KnkGenerator');
+define('KNK_GENERATOR_PLUGIN_FOLDER', __DIR__);
+require_once KNK_GENERATOR_PLUGIN_FOLDER . '/autoload.php';
+require_once KNK_GENERATOR_PLUGIN_FOLDER . '/vendor/autoload.php';
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-knk-generator-activator.php
+ * This action is documented in src/Core/Activator.php
  */
-function activate_knk_generator() {
-	//require_once plugin_dir_path( __FILE__ ) . 'includes/class-knk-generator-activator.php';
-	Knk_Generator_Activator::activate();
+function knkGeneratorActivation()
+{    
+    \KnkGenerator\Core\Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-knk-generator-deactivator.php
+ * This action is documented in src/Core/Deactivator.php
  */
-function deactivate_knk_generator() {
-	//require_once plugin_dir_path( __FILE__ ) . 'includes/class-knk-generator-deactivator.php';
-	Knk_Generator_Deactivator::deactivate();
+function knkGeneratorDeactivation() {
+    \KnkGenerator\Core\Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_knk_generator' );
-register_deactivation_hook( __FILE__, 'deactivate_knk_generator' );
-
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
- */
-//require plugin_dir_path( __FILE__ ) . 'includes/class-knk-generator.php';
+register_activation_hook(__FILE__, 'knkGeneratorActivation');
+register_deactivation_hook(__FILE__, 'knkGeneratorDeactivation');
 
 /**
  * Begins execution of the plugin.
@@ -76,10 +73,12 @@ register_deactivation_hook( __FILE__, 'deactivate_knk_generator' );
  *
  * @since    1.0.0
  */
-function run_knk_generator() {
-
-	$plugin = new Knk_Generator();
-	$plugin->run();
-
+function knkGeneratorStart() {
+    try {
+        $plugin = new KnkGenerator();
+        $plugin->run();
+    } catch (\Exception $e) {
+        print_r($e->getTrace());
+    }
 }
-run_knk_generator();
+knkGeneratorStart();
