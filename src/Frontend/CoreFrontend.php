@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator\Public;
+namespace KnkGenerator\Frontend;
 
 /**
  * The frontend-specific functionality of the plugin.
@@ -22,9 +22,8 @@ namespace KnkGenerator\Public;
  * @subpackage KnkGenerator/Public
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
-class CorePublic
+class CoreFrontend
 {
-
     /**
      * The ID of this plugin.
      *
@@ -63,7 +62,6 @@ class CorePublic
      */
     public function enqueueStyles()
     {
-
         /**
          * This function is provided for demonstration purposes only.
          *
@@ -92,7 +90,6 @@ class CorePublic
      */
     public function enqueueScripts()
     {
-
         /**
          * This function is provided for demonstration purposes only.
          *

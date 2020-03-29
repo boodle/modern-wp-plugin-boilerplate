@@ -5,7 +5,7 @@ namespace KnkGenerator;
 use KnkGenerator\Core\Loader;
 use KnkGenerator\Core\I18n;
 use KnkGenerator\Admin\CoreAdmin;
-use KnkGenerator\Public\CorePublic;
+use KnkGenerator\Frontend\CoreFrontend;
 
 /**
  * The file that defines the core plugin class
@@ -122,9 +122,9 @@ class KnkGenerator {
      */
     private function definePublicHooks()
     {
-        $pluginPublic = new CorePublic($this->getPluginName(), $this->getVersion());
-        $this->loader->addAction('wp_enqueue_scripts', $pluginPublic, 'enqueueStyles');
-        $this->loader->addAction('wp_enqueue_scripts', $pluginPublic, 'enqueueScripts');
+        $pluginFrontend = new CoreFrontend($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('wp_enqueue_scripts', $pluginFrontend, 'enqueueStyles');
+        $this->loader->addAction('wp_enqueue_scripts', $pluginFrontend, 'enqueueScripts');
     }
 
     /**
