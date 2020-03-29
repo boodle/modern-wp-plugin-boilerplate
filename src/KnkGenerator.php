@@ -5,6 +5,7 @@ namespace KnkGenerator;
 use KnkGenerator\Core\Loader;
 use KnkGenerator\Core\I18n;
 use KnkGenerator\Admin\CoreAdmin;
+use KnkGenerator\Public\CorePublic;
 
 /**
  * The file that defines the core plugin class
@@ -78,12 +79,7 @@ class KnkGenerator {
         $this->loader = new Loader();
         $this->setLocale();
         $this->defineAdminHooks();
-        
-        /*
-        
-        
-        $this->define_public_hooks();
-        */
+        $this->definePublicHooks();
     }
 
     /**

@@ -41,6 +41,7 @@ define('KNK_GENERATOR_VERSION', '1.0.0');
 define('KNK_GENERATOR_NAME', 'knk-generator');
 define('KNK_GENERATOR_NAMESPACE', 'KnkGenerator');
 define('KNK_GENERATOR_PLUGIN_FOLDER', __DIR__);
+define('KNK_GENERATOR_PLUGIN_URL', plugin_dir_url(__FILE__));
 require_once KNK_GENERATOR_PLUGIN_FOLDER . '/autoload.php';
 require_once KNK_GENERATOR_PLUGIN_FOLDER . '/vendor/autoload.php';
 

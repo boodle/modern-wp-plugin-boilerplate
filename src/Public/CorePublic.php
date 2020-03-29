@@ -1,28 +1,28 @@
 <?php
 
-namespace KnkGenerator\Admin;
+namespace KnkGenerator\Public;
 
 /**
- * The admin-specific functionality of the plugin.
+ * The frontend-specific functionality of the plugin.
  *
  * @link       https://totalonion.com
  * @since      1.0.0
  *
  * @package    KnkGenerator
- * @subpackage KnkGenerator/Admin
+ * @subpackage KnkGenerator/Public
  */
 
 /**
- * The admin-specific functionality of the plugin.
+ * The frontend-specific functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * enqueue the frontend-specific stylesheet and JavaScript.
  *
  * @package    KnkGenerator
- * @subpackage KnkGenerator/Admin
+ * @subpackage KnkGenerator/Public
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
-class CoreAdmin
+class CorePublic
 {
 
     /**
@@ -78,7 +78,7 @@ class CoreAdmin
 
         wp_enqueue_style(
             $this->pluginName,
-            KNK_GENERATOR_PLUGIN_URL.'build/admin.css',
+            KNK_GENERATOR_PLUGIN_URL.'build/public.css',
             [],
             $this->version,
             'all'
@@ -107,7 +107,7 @@ class CoreAdmin
 
         wp_enqueue_script(
             $this->pluginName,
-            KNK_GENERATOR_PLUGIN_URL.'build/admin.js',
+            KNK_GENERATOR_PLUGIN_URL.'build/public.js',
             [],
             $this->version,
             false
