@@ -1,4 +1,3 @@
-<h1>
-    Foo!<br />
-    <?php echo $test; ?>
-</h1>
+<section id="knk-generator">
+    ### shortcode stuff here ###
+</section>

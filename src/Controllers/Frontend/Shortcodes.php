@@ -13,11 +13,6 @@ class Shortcodes extends AbstractController
 
     public function renderGenerator()
     {
-        return $this->render(
-            'shortcodes:generator.php',
-            [
-                'test' => 'BOOM!'
-            ]
-        );
+        return $this->render('shortcodes:generator.php');
     }
 }
