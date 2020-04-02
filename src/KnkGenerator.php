@@ -2,10 +2,9 @@
 
 namespace KnkGenerator;
 
-use KnkGenerator\Core\Loader;
-use KnkGenerator\Core\I18n;
-use KnkGenerator\Admin\CoreAdmin;
-use KnkGenerator\Frontend\CoreFrontend;
+use KnkGenerator\Core;
+use KnkGenerator\Controllers\Admin;
+use KnkGenerator\Controllers\Frontend;
 
 /**
  * The file that defines the core plugin class
@@ -76,7 +75,7 @@ class KnkGenerator {
         $this->version = KNK_GENERATOR_VERSION;
         $this->pluginName = KNK_GENERATOR_NAME;
 
-        $this->loader = new Loader();
+        $this->loader = new Core\Loader();
         $this->setLocale();
         $this->defineAdminHooks();
         $this->definePublicHooks();
@@ -93,7 +92,7 @@ class KnkGenerator {
      */
     private function setLocale()
     {
-        $i18n = new I18n();
+        $i18n = new Core\I18n();
         $this->loader->addAction('plugins_loaded', $i18n, 'loadPluginTextdomain');
 
     }
@@ -107,9 +106,9 @@ class KnkGenerator {
      */
     private function defineAdminHooks()
     {
-        $pluginAdmin = new CoreAdmin($this->getPluginName(), $this->getVersion());
-        $this->loader->addAction('admin_enqueue_scripts', $pluginAdmin, 'enqueueStyles');
-        $this->loader->addAction('admin_enqueue_scripts', $pluginAdmin, 'enqueueScripts');
+        $enqueue = new Admin\AdminEnqueue($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('admin_enqueue_scripts', $enqueue, 'enqueueStyles');
+        $this->loader->addAction('admin_enqueue_scripts', $enqueue, 'enqueueScripts');
 
     }
 
@@ -122,9 +121,14 @@ class KnkGenerator {
      */
     private function definePublicHooks()
     {
-        $pluginFrontend = new CoreFrontend($this->getPluginName(), $this->getVersion());
-        $this->loader->addAction('wp_enqueue_scripts', $pluginFrontend, 'enqueueStyles');
-        $this->loader->addAction('wp_enqueue_scripts', $pluginFrontend, 'enqueueScripts');
+        // Enqueue scripts
+        $enqueue = new Frontend\FrontendEnqueue($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('wp_enqueue_scripts', $enqueue, 'enqueueStyles');
+        $this->loader->addAction('wp_enqueue_scripts', $enqueue, 'enqueueScripts');
+
+        // Shortcodes
+        $shortcodes = new Frontend\Shortcodes($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('init', $shortcodes, 'addShortcodes');
     }
 
     /**
