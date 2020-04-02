@@ -129,6 +129,10 @@ class KnkGenerator {
         // Shortcodes
         $shortcodes = new Frontend\Shortcodes($this->getPluginName(), $this->getVersion());
         $this->loader->addAction('init', $shortcodes, 'addShortcodes');
+
+        // API
+        $api = new Frontend\JsonApi($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('rest_api_init', $api, 'registerApiEndpoints');
     }
 
     /**

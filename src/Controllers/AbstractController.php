@@ -33,7 +33,13 @@ abstract class AbstractController
         $this->version = $version;
     }
 
-    protected function render(string $template, ?array $templateData = [])
+    /**
+     * Down and dirty renderer. Loads views from src/Resources/views/
+     *
+     * @var string $template       In the Symfony style like "shortcodes:generator.php"
+     * @var ?array $templateData   An associative array of data to make available to the template
+     */
+    protected function render(string $template, ?array $templateData = []): string
     {
         list($folder, $filename) = explode(':', $template);
         $filename = KNK_GENERATOR_PLUGIN_FOLDER . '/src/Resources/views/' . $folder . '/' . $filename;
