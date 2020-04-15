@@ -42,28 +42,14 @@ define('KNK_GENERATOR_NAME', 'knk-generator');
 define('KNK_GENERATOR_NAMESPACE', 'KnkGenerator');
 define('KNK_GENERATOR_PLUGIN_FOLDER', __DIR__);
 define('KNK_GENERATOR_PLUGIN_URL', plugin_dir_url(__FILE__));
+
+// Autoloaders
 require_once KNK_GENERATOR_PLUGIN_FOLDER . '/autoload.php';
 require_once KNK_GENERATOR_PLUGIN_FOLDER . '/vendor/autoload.php';
 
-/**
- * The code that runs during plugin activation.
- * This action is documented in src/Core/Activator.php
- */
-function knkGeneratorActivation()
-{    
-    \KnkGenerator\Core\Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in src/Core/Deactivator.php
- */
-function knkGeneratorDeactivation() {
-    \KnkGenerator\Core\Deactivator::deactivate();
-}
-
-register_activation_hook(__FILE__, 'knkGeneratorActivation');
-register_deactivation_hook(__FILE__, 'knkGeneratorDeactivation');
+// Activate and deactivation hooks
+register_activation_hook(__FILE__, ['\KnkGenerator\Core\Activator', 'activate']);
+register_deactivation_hook(__FILE__, ['\KnkGenerator\Core\Deactivator', 'deactivate']);
 
 /**
  * Begins execution of the plugin.
