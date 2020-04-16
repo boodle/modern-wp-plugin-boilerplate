@@ -4,7 +4,7 @@ namespace KnkGenerator\Controllers\Frontend;
 
 use KnkGenerator\Controllers\AbstractController;
 
-class FrontendEnqueue extends AbstractController
+class Enqueue extends AbstractController
 {
     public function enqueueStyles()
     {

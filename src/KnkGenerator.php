@@ -106,10 +106,15 @@ class KnkGenerator {
      */
     private function defineAdminHooks()
     {
-        $enqueue = new Admin\AdminEnqueue($this->getPluginName(), $this->getVersion());
+        // Enqueue script / styles
+        $enqueue = new Admin\Enqueue($this->getPluginName(), $this->getVersion());
         $this->loader->addAction('admin_enqueue_scripts', $enqueue, 'enqueueStyles');
         $this->loader->addAction('admin_enqueue_scripts', $enqueue, 'enqueueScripts');
 
+        // Add the settings page
+        $settingsPage = new Admin\SettingsPage($this->getPluginName(), $this->getVersion());
+        $this->loader->addAction('admin_menu', $settingsPage, 'registerPage');
+        $this->loader->addAction('admin_init', $settingsPage, 'registerSettings');
     }
 
     /**
@@ -122,7 +127,7 @@ class KnkGenerator {
     private function definePublicHooks()
     {
         // Enqueue scripts
-        $enqueue = new Frontend\FrontendEnqueue($this->getPluginName(), $this->getVersion());
+        $enqueue = new Frontend\Enqueue($this->getPluginName(), $this->getVersion());
         $this->loader->addAction('wp_enqueue_scripts', $enqueue, 'enqueueStyles');
         $this->loader->addAction('wp_enqueue_scripts', $enqueue, 'enqueueScripts');
 

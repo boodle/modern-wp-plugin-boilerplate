@@ -4,13 +4,8 @@ namespace KnkGenerator\Controllers\Admin;
 
 use KnkGenerator\Controllers\AbstractController;
 
-class AdminEnqueue extends AbstractController
+class Enqueue extends AbstractController
 {
-    /**
-     * Register the stylesheets for the admin area.
-     *
-     * @since    1.0.0
-     */
     public function enqueueStyles()
     {
         wp_enqueue_style(
@@ -22,11 +17,6 @@ class AdminEnqueue extends AbstractController
         );
     }
 
-    /**
-     * Register the JavaScript for the admin area.
-     *
-     * @since    1.0.0
-     */
     public function enqueueScripts()
     {
         wp_enqueue_script(
