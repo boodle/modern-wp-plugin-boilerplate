@@ -1,12 +1,11 @@
 <?php
 
-namespace KnkGenerator\Controllers;
+namespace ModernWpPluginBoilerplate\Controllers;
 
-use KnkGenerator\Exceptions;
+use ModernWpPluginBoilerplate\Exceptions;
 
 abstract class AbstractController
 {
-
     /**
      * The ID of this plugin.
      *
@@ -42,7 +41,7 @@ abstract class AbstractController
     protected function render(string $template, ?array $templateData = []): string
     {
         list($folder, $filename) = explode(':', $template);
-        $filename = KNK_GENERATOR_PLUGIN_FOLDER . '/src/Resources/views/' . $folder . '/' . $filename;
+        $filename = MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/src/Resources/views/' . $folder . '/' . $filename;
 
         if (!file_exists($filename)) {
             throw new Exceptions\TemplateException(sprintf('Template %s not found.', $filename));

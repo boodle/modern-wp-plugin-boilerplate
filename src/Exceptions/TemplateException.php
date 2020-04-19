@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator\Exceptions;
+namespace ModernWpPluginBoilerplate\Exceptions;
 
 class TemplateException extends \Exception
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator\Core;
+namespace ModernWpPluginBoilerplate\Core;
 
 /**
  * Fired during plugin deactivation
@@ -8,8 +8,8 @@ namespace KnkGenerator\Core;
  * @link       https://totalonion.com
  * @since      1.0.0
  *
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  */
 
 /**
@@ -18,8 +18,8 @@ namespace KnkGenerator\Core;
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
 class Deactivator

@@ -1,8 +1,8 @@
 <?php
 
-namespace KnkGenerator\Controllers\Admin;
+namespace ModernWpPluginBoilerplate\Controllers\Admin;
 
-use KnkGenerator\Controllers\AbstractController;
+use ModernWpPluginBoilerplate\Controllers\AbstractController;
 
 class Enqueue extends AbstractController
 {
@@ -10,7 +10,7 @@ class Enqueue extends AbstractController
     {
         wp_enqueue_style(
             $this->pluginName,
-            KNK_GENERATOR_PLUGIN_URL.'build/admin.css',
+            MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_URL.'build/admin.css',
             [],
             $this->version,
             'all'
@@ -21,7 +21,7 @@ class Enqueue extends AbstractController
     {
         wp_enqueue_script(
             $this->pluginName,
-            KNK_GENERATOR_PLUGIN_URL.'build/admin.js',
+            MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_URL.'build/admin.js',
             [],
             $this->version,
             false

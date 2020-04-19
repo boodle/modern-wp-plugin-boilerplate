@@ -1,10 +1,10 @@
 <?php
 
-namespace KnkGenerator;
+namespace ModernWpPluginBoilerplate;
 
-use KnkGenerator\Core;
-use KnkGenerator\Controllers\Admin;
-use KnkGenerator\Controllers\Frontend;
+use ModernWpPluginBoilerplate\Core;
+use ModernWpPluginBoilerplate\Controllers\Admin;
+use ModernWpPluginBoilerplate\Controllers\Frontend;
 
 /**
  * The file that defines the core plugin class
@@ -29,10 +29,10 @@ use KnkGenerator\Controllers\Frontend;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    KnkGenerator
+ * @package    ModernWpPluginBoilerplate
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
-class KnkGenerator {
+class ModernWpPluginBoilerplate {
 
     /**
      * The loader that's responsible for maintaining and registering all hooks that power
@@ -40,7 +40,7 @@ class KnkGenerator {
      *
      * @since    1.0.0
      * @access   protected
-     * @var      KnkGeneratorLoader    $loader    Maintains and registers all hooks for the plugin.
+     * @var      ModernWpPluginBoilerplateLoader    $loader    Maintains and registers all hooks for the plugin.
      */
     protected $loader;
 
@@ -72,8 +72,8 @@ class KnkGenerator {
      * @since    1.0.0
      */
     public function __construct() {
-        $this->version = KNK_GENERATOR_VERSION;
-        $this->pluginName = KNK_GENERATOR_NAME;
+        $this->version = MODERN_WP_PLUGIN_BOILERPLATE_VERSION;
+        $this->pluginName = MODERN_WP_PLUGIN_BOILERPLATE_NAME;
 
         $this->loader = new Core\Loader();
         $this->setLocale();
@@ -84,7 +84,7 @@ class KnkGenerator {
     /**
      * Define the locale for this plugin for internationalization.
      *
-     * Uses the KnkGenerator\Core\Internationalisation class in order to set the domain and to register the hook
+     * Uses the ModernWpPluginBoilerplate\Core\Internationalisation class in order to set the domain and to register the hook
      * with WordPress.
      *
      * @since    1.0.0

@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator\Core;
+namespace ModernWpPluginBoilerplate\Core;
 
 /**
  * Register all actions and filters for the plugin
@@ -8,8 +8,8 @@ namespace KnkGenerator\Core;
  * @link       https://totalonion.com
  * @since      1.0.0
  *
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  */
 
 /**
@@ -19,8 +19,8 @@ namespace KnkGenerator\Core;
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
 class Loader

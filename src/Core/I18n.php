@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator\Core;
+namespace ModernWpPluginBoilerplate\Core;
 
 /**
  * Define the internationalization functionality
@@ -11,8 +11,8 @@ namespace KnkGenerator\Core;
  * @link       https://totalonion.com
  * @since      1.0.0
  *
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  */
 
 /**
@@ -22,8 +22,8 @@ namespace KnkGenerator\Core;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    KnkGenerator
- * @subpackage KnkGenerator/Core
+ * @package    ModernWpPluginBoilerplate
+ * @subpackage ModernWpPluginBoilerplate/Core
  * @author     Ben Broadhurst <ben@totalonion.com>
  */
 class I18n
@@ -36,9 +36,9 @@ class I18n
     public function loadPluginTextdomain()
     {
         load_plugin_textdomain(
-            'knk-generator',
+            'modern-wp-plugin-boilerplate',
             false,
-            dirname(KNK_GENERATOR_PLUGIN_FOLDER . '/languages/')
+            dirname(MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/languages/')
         );
     }
 }

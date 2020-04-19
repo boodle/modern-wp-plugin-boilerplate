@@ -21,8 +21,7 @@
  *
  * @link       https://totalonion.com
  * @since      1.0.0
- *
- * @package    Knk_Generator
+ * @package    ModernWpPluginBoilerplate
  */
 
 // If uninstall not called from WordPress, then exit.

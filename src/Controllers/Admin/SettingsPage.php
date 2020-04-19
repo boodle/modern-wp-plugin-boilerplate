@@ -1,8 +1,8 @@
 <?php
 
-namespace KnkGenerator\Controllers\Admin;
+namespace ModernWpPluginBoilerplate\Controllers\Admin;
 
-use KnkGenerator\Controllers\AbstractController;
+use ModernWpPluginBoilerplate\Controllers\AbstractController;
 
 class SettingsPage extends AbstractController
 {
@@ -13,7 +13,7 @@ class SettingsPage extends AbstractController
             'Settings Admin',                   // page title
             'My Settings',                      // menu title
             'manage_options',                   // capability required to access / see it
-            KNK_GENERATOR_NAME.'settings-page', // slug (needs to be unique)
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'settings-page', // slug (needs to be unique)
             [$this, 'renderPage']               // callable function to render the page
         );
     }
@@ -22,14 +22,14 @@ class SettingsPage extends AbstractController
     {
         // This created the option in the wp_option table
         // reference https://developer.wordpress.org/reference/functions/add_option/
-        add_option(KNK_GENERATOR_NAME.'_id_number');
-        add_option(KNK_GENERATOR_NAME.'_title');
+        add_option(MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_id_number');
+        add_option(MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_title');
 
         // This marks them as a setting you can edit in the admin
         // reference https://developer.wordpress.org/reference/functions/register_setting/
         register_setting(
-            KNK_GENERATOR_NAME.'_options',      // Option group; Default whitelisted option listed on URL above
-            KNK_GENERATOR_NAME.'_id_number',    // ID
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_options',      // Option group; Default whitelisted option listed on URL above
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_id_number',    // ID
             [
                 'type' => 'number',
                 'description' => 'Example ID',
@@ -40,8 +40,8 @@ class SettingsPage extends AbstractController
         );
 
         register_setting(
-            KNK_GENERATOR_NAME.'_options',      // Option group; Default whitelisted option listed on URL above
-            KNK_GENERATOR_NAME.'_title',        // ID
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_options',      // Option group; Default whitelisted option listed on URL above
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_title',        // ID
             [
                 'type' => 'string',
                 'description' => 'Example title',
@@ -53,34 +53,34 @@ class SettingsPage extends AbstractController
 
         // Adds the settings *section*
         add_settings_section(
-            KNK_GENERATOR_NAME.'_options_section',  // Unique ID for the section
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_options_section',  // Unique ID for the section
             'Section Title',                        // Title for the section
             [$this, 'renderSectionIntro'],          // Callable function to echo the intro
-            KNK_GENERATOR_NAME.'settings-page'      // the page this section appears on (defined in registerPage above)
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'settings-page'      // the page this section appears on (defined in registerPage above)
         );
 
         // This adds the html field that renders the setting
         // reference https://developer.wordpress.org/reference/functions/add_settings_field/
         add_settings_field(
-            KNK_GENERATOR_NAME.'_id_number',        // id="" value
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_id_number',        // id="" value
             'Example ID number',                    // <label> vale
             [$this, 'renderField'],                 // callback to actually do the rendering of the input
-            KNK_GENERATOR_NAME.'settings-page',     // Slug of the page to show this on (defined in registerPage above)
-            KNK_GENERATOR_NAME.'_options_section',  // slug of the sction the field appears in
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'settings-page',     // Slug of the page to show this on (defined in registerPage above)
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_options_section',  // slug of the sction the field appears in
             [                                       // array of values to pass to the render callback
-                'id' => KNK_GENERATOR_NAME.'_id_number',
+                'id' => MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_id_number',
                 'type' => 'number',
             ]
         );
 
         add_settings_field(
-            KNK_GENERATOR_NAME.'_title',            // id="" value
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_title',            // id="" value
             'Example Title',                        // <label> vale
             [$this, 'renderField'],                 // callback to actually do the rendering of the input
-            KNK_GENERATOR_NAME.'settings-page',     // Slug of the page to show this on (defined in registerPage above)
-            KNK_GENERATOR_NAME.'_options_section',  // slug of the sction the field appears in
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'settings-page',     // Slug of the page to show this on (defined in registerPage above)
+            MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_options_section',  // slug of the sction the field appears in
             [                                       // array of values to pass to the render callback
-                'id' => KNK_GENERATOR_NAME.'_title',
+                'id' => MODERN_WP_PLUGIN_BOILERPLATE_NAME.'_title',
                 'type' => 'text',
             ]
         );
@@ -88,7 +88,7 @@ class SettingsPage extends AbstractController
 
     public function renderSectionIntro()
     {
-        echo __('Enter your settings below:', KNK_GENERATOR_NAME);
+        echo __('Enter your settings below:', MODERN_WP_PLUGIN_BOILERPLATE_NAME);
     }
 
     public function renderField($fieldParameters)

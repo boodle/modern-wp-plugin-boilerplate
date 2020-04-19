@@ -1,16 +1,16 @@
 <?php
 
-namespace KnkGenerator\Controllers\Frontend;
+namespace ModernWpPluginBoilerplate\Controllers\Frontend;
 
-use KnkGenerator\Controllers\AbstractController;
+use ModernWpPluginBoilerplate\Controllers\AbstractController;
 
 class JsonApi extends AbstractController
 {
     public function registerApiEndpoints()
     {
-        // Example endpoint would be https://www.yoursite.com/wp-json/knk-generator/v1/thing
+        // Example endpoint would be https://www.yoursite.com/wp-json/modern-wp-plugin-boilerplate/v1/thing
         register_rest_route(
-            'knk-generator/v1',
+            'modern-wp-plugin-boilerplate/v1',
             '/thing',
             [
                 'methods' => 'GET',

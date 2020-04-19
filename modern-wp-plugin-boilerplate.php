@@ -1,6 +1,6 @@
 <?php
 
-namespace KnkGenerator;
+namespace ModernWpPluginBoilerplate;
 
 /**
  * The plugin bootstrap file
@@ -12,18 +12,18 @@ namespace KnkGenerator;
  *
  * @link              https://totalonion.com
  * @since             1.0.0
- * @package           KnkGenerator
+ * @package           ModernWpPluginBoilerplate
  *
  * @wordpress-plugin
- * Plugin Name:       KNK generator
- * Plugin URI:        https://github.com/TotalOnion/knk-generator
- * Description:       Connect to the multiverse
+ * Plugin Name:       Modern WP Plugin Boilerplate
+ * Plugin URI:        https://github.com/boodle/modern-wp-plugin-boilerplate
+ * Description:       A basic plugin structure for you to expand upon.
  * Version:           1.0.0
  * Author:            Ben Broadhurst
  * Author URI:        https://totalonion.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       knk-generator
+ * Text Domain:       modern-wp-plugin-boilerplate
  * Domain Path:       /languages
  */
 
@@ -37,19 +37,19 @@ if (! defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('KNK_GENERATOR_VERSION', '1.0.0');
-define('KNK_GENERATOR_NAME', 'knk-generator');
-define('KNK_GENERATOR_NAMESPACE', 'KnkGenerator');
-define('KNK_GENERATOR_PLUGIN_FOLDER', __DIR__);
-define('KNK_GENERATOR_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('MODERN_WP_PLUGIN_BOILERPLATE_VERSION', '1.0.0');
+define('MODERN_WP_PLUGIN_BOILERPLATE_NAME', 'modern-wp-plugin-boilerplate');
+define('MODERN_WP_PLUGIN_BOILERPLATE_NAMESPACE', 'ModernWpPluginBoilerplate');
+define('MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER', __DIR__);
+define('MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 // Autoloaders
-require_once KNK_GENERATOR_PLUGIN_FOLDER . '/autoload.php';
-require_once KNK_GENERATOR_PLUGIN_FOLDER . '/vendor/autoload.php';
+require_once MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/autoload.php';
+require_once MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/vendor/autoload.php';
 
 // Activate and deactivation hooks
-register_activation_hook(__FILE__, ['\KnkGenerator\Core\Activator', 'activate']);
-register_deactivation_hook(__FILE__, ['\KnkGenerator\Core\Deactivator', 'deactivate']);
+register_activation_hook(__FILE__, ['\ModernWpPluginBoilerplate\Core\Activator', 'activate']);
+register_deactivation_hook(__FILE__, ['\ModernWpPluginBoilerplate\Core\Deactivator', 'deactivate']);
 
 /**
  * Begins execution of the plugin.
@@ -60,12 +60,12 @@ register_deactivation_hook(__FILE__, ['\KnkGenerator\Core\Deactivator', 'deactiv
  *
  * @since    1.0.0
  */
-function knkGeneratorStart() {
+function modernWpPluginBoilerplateStart() {
     try {
-        $plugin = new KnkGenerator();
+        $plugin = new ModernWpPluginBoilerplate();
         $plugin->run();
     } catch (\Exception $e) {
         print_r($e->getTrace());
     }
 }
-knkGeneratorStart();
+modernWpPluginBoilerplateStart();

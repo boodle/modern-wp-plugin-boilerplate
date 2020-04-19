@@ -1,5 +1,5 @@
 {
-  "name": "knk-generator",
+  "name": "modern-wp-plugin-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TotalOnion/knk-generator.git"
+    "url": "git+https://github.com/TotalOnion/modern-wp-plugin-boilerplate.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TotalOnion/knk-generator/issues"
+    "url": "https://github.com/TotalOnion/modern-wp-plugin-boilerplate/issues"
   },
-  "homepage": "https://github.com/TotalOnion/knk-generator#readme"
+  "homepage": "https://github.com/TotalOnion/modern-wp-plugin-boilerplate#readme"
 }

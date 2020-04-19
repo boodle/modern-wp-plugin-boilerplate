@@ -1,14 +1,14 @@
 <?php
 
-namespace KnkGenerator\Controllers\Frontend;
+namespace ModernWpPluginBoilerplate\Controllers\Frontend;
 
-use KnkGenerator\Controllers\AbstractController;
+use ModernWpPluginBoilerplate\Controllers\AbstractController;
 
 class Shortcodes extends AbstractController
 {
     public function addShortcodes()
     {
-        add_shortcode('knk-generator', [$this, 'renderGenerator']);
+        add_shortcode('modern-wp-plugin-boilerplate', [$this, 'renderGenerator']);
     }
 
     public function renderGenerator()
