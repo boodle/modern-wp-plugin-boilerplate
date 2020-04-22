@@ -7,19 +7,6 @@ use ModernWpPluginBoilerplate\Controllers\Admin;
 use ModernWpPluginBoilerplate\Controllers\Frontend;
 
 /**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
- * @link       https://totalonion.com
- * @since      1.0.0
- *
- * @package    Knk_Generator
- * @subpackage Knk_Generator/includes
- */
-
-/**
  * The core plugin class.
  *
  * This is used to define internationalization, admin-specific hooks, and
@@ -40,7 +27,7 @@ class ModernWpPluginBoilerplate {
      *
      * @since    1.0.0
      * @access   protected
-     * @var      ModernWpPluginBoilerplateLoader    $loader    Maintains and registers all hooks for the plugin.
+     * @var      ModernWpPluginBoilerplate\Core\Loader    $loader    Maintains and registers all hooks for the plugin.
      */
     protected $loader;
 
@@ -166,7 +153,7 @@ class ModernWpPluginBoilerplate {
      * The reference to the class that orchestrates the hooks with the plugin.
      *
      * @since     1.0.0
-     * @return    Knk_Generator_Loader    Orchestrates the hooks of the plugin.
+     * @return    ModernWpPluginBoilerplate\Core\Loader    Orchestrates the hooks of the plugin.
      */
     public function getLoader()
     {
