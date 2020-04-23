@@ -45,7 +45,9 @@ define('MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 // Autoloaders
 require_once MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/autoload.php';
-require_once MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/vendor/autoload.php';
+if (file_exists(MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/vendor/autoload.php')) {
+    require_once MODERN_WP_PLUGIN_BOILERPLATE_PLUGIN_FOLDER . '/vendor/autoload.php';
+}
 
 // Activate and deactivation hooks
 register_activation_hook(__FILE__, ['\ModernWpPluginBoilerplate\Core\Activator', 'activate']);
